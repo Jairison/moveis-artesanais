@@ -1,0 +1,47 @@
+Imagens provisórias em domínio público / CC0 (uso comercial livre, sem atribuição obrigatória).
+Produtos: Cleveland Museum of Art Open Access. Ambientes: StockSnap e WordPress Photo Directory via Openverse.
+Substitua pelas fotos reais das peças do ateliê.
+
+produtos/mb-c01.jpg | cleveland | Side Chair | https://openaccess-cdn.clevelandart.org/1986.208.2/1986.208.2_web.jpg
+produtos/mb-c02.jpg | cleveland | Roundback Armchair: Lohan Type | https://openaccess-cdn.clevelandart.org/1955.40.1/1955.40.1_web.jpg
+produtos/mb-c03.jpg | cleveland | Side Chair | https://openaccess-cdn.clevelandart.org/1922.677.2/1922.677.2_web.jpg
+produtos/mb-c04.jpg | cleveland | Side Chair | https://openaccess-cdn.clevelandart.org/1982.4/1982.4_web.jpg
+produtos/mb-c05.jpg | cleveland | Chair | https://openaccess-cdn.clevelandart.org/1985.96/1985.96_web.jpg
+produtos/mb-c06.jpg | cleveland | Armchair | https://openaccess-cdn.clevelandart.org/1984.178/1984.178_web.jpg
+produtos/mb-c07.jpg | cleveland | Chair | https://openaccess-cdn.clevelandart.org/1962.125/1962.125_web.jpg
+produtos/mb-p01.jpg | cleveland | Desk Chair with Swivel Mechanism | https://openaccess-cdn.clevelandart.org/1964.298/1964.298_web.jpg
+produtos/mb-p02.jpg | cleveland | Armchair | https://openaccess-cdn.clevelandart.org/1928.212/1928.212_web.jpg
+produtos/mb-p03.jpg | cleveland | Armchair | https://openaccess-cdn.clevelandart.org/1926.548/1926.548_web.jpg
+produtos/mb-p04.jpg | cleveland | Armchair | https://openaccess-cdn.clevelandart.org/2013.96/2013.96_web.jpg
+produtos/mb-p05.jpg | cleveland | Armchair | https://openaccess-cdn.clevelandart.org/1915.567/1915.567_web.jpg
+produtos/mb-m01.jpg | cleveland | Side Table | https://openaccess-cdn.clevelandart.org/1964.229/1964.229_web.jpg
+produtos/mb-m02.jpg | cleveland | Card Table | https://openaccess-cdn.clevelandart.org/1987.52/1987.52_web.jpg
+produtos/mb-m03.jpg | cleveland | Side Table with Everted Ends | https://openaccess-cdn.clevelandart.org/1955.42/1955.42_web.jpg
+produtos/mb-m04.jpg | cleveland | Low Table (kang zhuo) with Dragons in Clouds | https://openaccess-cdn.clevelandart.org/1964.228/1964.228_web.jpg
+produtos/mb-m05.jpg | cleveland | Work Table | https://openaccess-cdn.clevelandart.org/1942.597/1942.597_web.jpg
+produtos/mb-m06.jpg | cleveland | Folding Table (Che-Sang) for Memorial Service | https://openaccess-cdn.clevelandart.org/1999.120.2/1999.120.2_web.jpg
+produtos/mb-b01.jpg | cleveland | Stool | https://openaccess-cdn.clevelandart.org/1982.262.1/1982.262.1_web.jpg
+produtos/mb-b02.jpg | cleveland | Stool (1 of 2) | https://openaccess-cdn.clevelandart.org/1982.114.1/1982.114.1_web.jpg
+produtos/mb-b03.jpg | cleveland | Stool | https://openaccess-cdn.clevelandart.org/1929.320/1929.320_web.jpg
+produtos/mb-b04.jpg | cleveland | Stool | https://openaccess-cdn.clevelandart.org/1929.345/1929.345_web.jpg
+produtos/mb-b05.jpg | cleveland | Stool | https://openaccess-cdn.clevelandart.org/1989.162.1/1989.162.1_web.jpg
+produtos/mb-a01.jpg | cleveland | Cabinet | https://openaccess-cdn.clevelandart.org/1976.53/1976.53_web.jpg
+produtos/mb-a02.jpg | cleveland | Sideboard | https://openaccess-cdn.clevelandart.org/2000.72.1/2000.72.1_web.jpg
+produtos/mb-a03.jpg | cleveland | Table Desk (Bureau Plat) | https://openaccess-cdn.clevelandart.org/1944.123/1944.123_web.jpg
+produtos/mb-a04.jpg | cleveland | Cellarette | https://openaccess-cdn.clevelandart.org/2000.72.2/2000.72.2_web.jpg
+produtos/mb-e01.jpg | cleveland | Desk and Bookcase  | https://openaccess-cdn.clevelandart.org/1990.96/1990.96_web.jpg
+produtos/mb-e02.jpg | cleveland | Desk and Bookcase | https://openaccess-cdn.clevelandart.org/2012.43/2012.43_web.jpg
+produtos/mb-e03.jpg | cleveland | Bookcase | https://openaccess-cdn.clevelandart.org/1958.129.2/1958.129.2_web.jpg
+hero.jpg | stocksnap | Carpenter Workshop | https://cdn.stocksnap.io/img-thumbs/960w/YPM6VH3FCW.jpg
+historia.jpg | stocksnap | Calipers Carpenter | https://cdn.stocksnap.io/img-thumbs/960w/GWIDWSKJJJ.jpg
+processo.jpg | stocksnap | Carpenter Working | https://cdn.stocksnap.io/img-thumbs/960w/ZMQNOXQMZO.jpg
+projetos/alto-do-lago.jpg | stocksnap | Food Eat | https://cdn.stocksnap.io/img-thumbs/960w/3J13XAT5LM.jpg
+projetos/conselho.jpg | stocksnap | Architecture House | https://cdn.stocksnap.io/img-thumbs/960w/9QLIF5KSSQ.jpg
+projetos/bistro.jpg | stocksnap | Stools Bar | https://cdn.stocksnap.io/img-thumbs/960w/U03HNOSR4L.jpg
+projetos/biblioteca.jpg | stocksnap | Books Bookshelf | https://cdn.stocksnap.io/img-thumbs/960w/0SP70JWWOK.jpg
+insta/1.jpg | stocksnap | Old Wood | https://cdn.stocksnap.io/img-thumbs/960w/T9WYRK0B1R.jpg
+insta/2.jpg | stocksnap | Carpenter Workshop | https://cdn.stocksnap.io/img-thumbs/960w/YPM6VH3FCW.jpg
+insta/3.jpg | stocksnap | Woodworking Shavings | https://cdn.stocksnap.io/img-thumbs/960w/1DMG58KRJ8.jpg
+insta/4.jpg | stocksnap | House Interior | https://cdn.stocksnap.io/img-thumbs/960w/M235DH8I3H.jpg
+insta/5.jpg | stocksnap | Stools Hardwood | https://cdn.stocksnap.io/img-thumbs/960w/69DA637D67.jpg
+insta/6.jpg | stocksnap | Carpenter Workshop | https://cdn.stocksnap.io/img-thumbs/960w/YPM6VH3FCW.jpg

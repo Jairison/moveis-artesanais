@@ -20,12 +20,31 @@ robots.txt, sitemap.xml SEO
 
 1. **WhatsApp**: em `js/config.js`, troque `whatsapp` pelo número real (55 + DDD + número, só dígitos).
 2. **Domínio**: substitua `https://www.marlonbrandoart.com.br/` pelo domínio real em `index.html`, `robots.txt` e `sitemap.xml`.
-3. **Imagem de compartilhamento**: coloque `assets/img/og-image.jpg` (1200×630) — aparece ao compartilhar o link no WhatsApp/Instagram.
+3. **Imagem de compartilhamento**: hoje usa `assets/img/hero.jpg`. O ideal é uma foto do ateliê em 1200×630.
 4. **Textos**: revise história, linha do tempo, projetos e depoimentos em `index.html` (são exemplos).
+
+## Fotos provisórias
+
+As fotos atuais são **provisórias**, todas em domínio público / CC0 (uso comercial livre):
+peças do acervo aberto do Cleveland Museum of Art e fotos de ateliê do StockSnap e do WordPress
+Photo Directory. A lista completa está em `assets/img/CREDITOS.txt`.
+**Elas não são peças do ateliê** — troque pelas fotos reais assim que possível.
+
+| Onde aparece | Arquivo |
+|---|---|
+| Topo do site | `assets/img/hero.jpg` |
+| Nossa história | `assets/img/historia.jpg` |
+| Fundo do "Processo" | `assets/img/processo.jpg` |
+| Projetos entregues | `assets/img/projetos/*.jpg` |
+| Grade do Instagram | `assets/img/insta/1.jpg` … `6.jpg` |
+| Produtos | `assets/img/produtos/mb-c01.jpg` … (nome = código do produto) |
+
+Para trocar, basta salvar a foto nova com o **mesmo nome de arquivo**.
 
 ## Fotos dos produtos
 
-Coloque a foto em `assets/img/produtos/` (ideal: quadrada, 1200×1200, JPG ou WebP até 300 KB)
+Coloque a foto em `assets/img/produtos/` (ideal: **retrato 4:5**, ex. 880×1100, peça centralizada com
+folga nas bordas, fundo neutro, JPG até 200 KB)
 e informe o caminho no produto:
 
 ```js
@@ -34,8 +53,7 @@ e informe o caminho no produto:
 
 Sem foto, o site mostra automaticamente uma ilustração em traço da categoria.
 
-Para os **projetos entregues**, coloque um `<img src="assets/img/projetos/..." alt="...">` dentro da
-`div.project__media` correspondente em `index.html`.
+
 
 ## Instagram
 

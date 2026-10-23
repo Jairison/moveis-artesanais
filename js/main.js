@@ -38,28 +38,24 @@
       "M50 140L50 112L58 112L58 140M60 140L60 108L68 108L68 140M70 140L70 116L78 116L78 140M130 140L130 118L150 118L150 140" +
       "M60 186L60 158L140 158L140 186",
   };
-  var TONES = {
-    cadeiras: "#e9d8c4", poltronas: "#e2cdb5", mesas: "#efe2d2",
-    bancos: "#e6d3bd", aparadores: "#ddc6ac", estantes: "#ece0d0",
-  };
-
   function svgArt(cat, stroke) {
     return '<svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="' + (stroke || 1.4) +
       '" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + (ART[cat] || ART.cadeiras) + '"/></svg>';
   }
-  function placeholder(cat, tone) {
-    return '<div class="ph" style="--tone:' + (tone || TONES[cat] || "#e9d8c4") + '">' +
-      '<div class="ph__art">' + svgArt(cat) + '</div><span class="ph__mark">MB</span></div>';
+  function placeholder(cat) {
+    return '<div class="ph"><div class="ph__art">' + svgArt(cat) + '</div><span class="ph__mark">MB</span></div>';
   }
-  function media(p) {
+  // Fotos de produto: ideal em formato retrato 4:5 com a peça centralizada
+  function media(p, eager) {
     if (!p.imagem) return placeholder(p.categoria);
-    return '<img src="' + p.imagem + '" alt="' + esc(p.nome) + ' — ' + esc(p.madeira) +
-      '" loading="lazy" decoding="async" data-cat="' + p.categoria + '">';
+    return '<div class="photo"><img src="' + p.imagem + '" alt="' +
+      esc(p.nome) + ' — ' + esc(p.madeira) + '"' + (eager ? "" : ' loading="lazy"') +
+      ' decoding="async" data-cat="' + p.categoria + '"></div>';
   }
   // Se a foto falhar, volta para a ilustração
   document.addEventListener("error", function (e) {
     var img = e.target;
-    if (img.tagName === "IMG" && img.dataset.cat) img.outerHTML = placeholder(img.dataset.cat);
+    if (img.tagName === "IMG" && img.dataset.cat) img.parentNode.outerHTML = placeholder(img.dataset.cat);
   }, true);
 
   function esc(s) {
@@ -108,16 +104,17 @@
   toggle.addEventListener("click", function () { setMenu(!nav.classList.contains("is-open")); });
   $$("a", nav).forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
 
-  /* ---------- Hero ---------- */
-  $("#heroArt").innerHTML = svgArt("cadeiras", 1.1);
-
   /* ---------- Categorias ---------- */
   function contar(id) { return PRODUTOS.filter(function (p) { return p.categoria === id; }).length; }
+  function capa(id) {
+    var lista = PRODUTOS.filter(function (p) { return p.categoria === id; });
+    return lista.filter(function (p) { return p.destaque && p.imagem; })[0] || lista[0] || { categoria: id };
+  }
 
   $("#cats").innerHTML = CATS.map(function (c) {
     var n = contar(c.id);
     return '<button class="cat reveal" data-cat="' + c.id + '" aria-label="Ver ' + esc(c.nome) + '">' +
-      '<div class="cat__art">' + svgArt(c.id) + '</div>' +
+      media(capa(c.id)) +
       '<div class="cat__info"><div><span class="cat__name">' + esc(c.nome) + '</span>' +
       '<span class="cat__desc">' + esc(c.descricao) + '</span></div>' +
       '<span class="cat__count">' + n + (n === 1 ? " peça" : " peças") + '</span></div></button>';
@@ -183,7 +180,7 @@
     var p = PRODUTOS.filter(function (x) { return x.codigo === codigo; })[0];
     if (!p) return;
     ultimoFoco = origem || document.activeElement;
-    $("#modalMedia").innerHTML = media(p);
+    $("#modalMedia").innerHTML = media(p, true);
     $("#modalCode").textContent = p.codigo + " · " + catNome(p.categoria);
     $("#modalTitle").textContent = p.nome;
     $("#modalDesc").textContent = p.descricao;
@@ -216,11 +213,6 @@
   // Link direto para um produto: site.com/#p-MB-C01
   if (/^#p-/.test(location.hash)) abrirModal(location.hash.slice(3));
 
-  /* ---------- Projetos (ilustração quando não há foto) ---------- */
-  $$(".project__media[data-art]").forEach(function (el) {
-    if (!el.querySelector("img")) el.innerHTML = placeholder(el.dataset.art, el.style.getPropertyValue("--tone"));
-  });
-
   /* ---------- Instagram ---------- */
   var instaEl = $("#insta");
   if (CFG.instagramPosts && CFG.instagramPosts.length) {
@@ -234,14 +226,10 @@
     s.src = "https://www.instagram.com/embed.js";
     document.body.appendChild(s);
   } else {
-    var ordem = ["cadeiras", "mesas", "poltronas", "aparadores", "bancos", "estantes"];
-    var tons = ["#e9d8c4", "#5e4634", "#efe2d2", "#8b6a4c", "#e2cdb5", "#2a221c"];
-    instaEl.innerHTML = ordem.map(function (c, i) {
-      var escuro = i % 2 === 1;
-      return '<a class="insta__item reveal" href="' + instaUrl + '" target="_blank" rel="noopener" aria-label="Ver no Instagram"' +
-        (escuro ? ' style="color:#f6efe6"' : "") + '>' +
-        placeholder(c, tons[i]).replace('class="ph__art"', 'class="ph__art"' + (escuro ? ' style="color:#f6efe6;opacity:.6"' : "")) +
-        "</a>";
+    // Galeria local: troque as fotos em assets/img/insta/1.jpg ... 6.jpg
+    instaEl.innerHTML = [1, 2, 3, 4, 5, 6].map(function (n) {
+      return '<a class="insta__item reveal" href="' + instaUrl + '" target="_blank" rel="noopener" aria-label="Ver no Instagram">' +
+        '<img src="assets/img/insta/' + n + '.jpg" alt="Bastidores do ateliê Marlon Brando" loading="lazy"></a>';
     }).join("");
   }
 

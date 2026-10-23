@@ -11,7 +11,7 @@
   <meta name="author" content="Marlon Brando Móveis Artesanais">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.marlonbrandoart.com.br/">
-  <meta name="theme-color" content="#1f1a16">
+  <meta name="theme-color" content="#121110">
 
   <!-- Open Graph / redes sociais -->
   <meta property="og:type" content="website">
@@ -20,7 +20,7 @@
   <meta property="og:title" content="Marlon Brando | Móveis Artesanais de Alto Padrão">
   <meta property="og:description" content="O chefão das cadeiras. Mais de 40 anos criando mobiliário artesanal exclusivo.">
   <meta property="og:url" content="https://www.marlonbrandoart.com.br/">
-  <meta property="og:image" content="https://www.marlonbrandoart.com.br/assets/img/og-image.jpg">
+  <meta property="og:image" content="https://www.marlonbrandoart.com.br/assets/img/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
@@ -28,7 +28,7 @@
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -40,7 +40,7 @@
     "name": "Marlon Brando | Móveis Artesanais",
     "description": "Mobiliário artesanal exclusivo de alto padrão. Mais de 40 anos de experiência.",
     "url": "https://www.marlonbrandoart.com.br/",
-    "image": "https://www.marlonbrandoart.com.br/assets/img/og-image.jpg",
+    "image": "https://www.marlonbrandoart.com.br/assets/img/hero.jpg",
     "slogan": "O chefão das cadeiras",
     "sameAs": ["https://www.instagram.com/marlonbrandoart/"],
     "priceRange": "$$$"
@@ -85,7 +85,7 @@
         <div class="hero__copy">
           <p class="eyebrow reveal">Desde 1984 · Feito à mão</p>
           <h1 class="hero__title reveal">
-            <span class="script">O chefão</span>
+            <span class="hero__kicker">O chefão</span>
             das cadeiras
           </h1>
           <p class="hero__lead reveal">
@@ -107,14 +107,13 @@
           </dl>
         </div>
 
-        <div class="hero__visual reveal" aria-hidden="true">
+        <div class="hero__visual reveal">
           <div class="hero__frame">
-            <div class="hero__seal">
-              <span class="seal__mono">MB</span>
-              <span class="seal__name">Marlon Brando</span>
-              <span class="seal__line">Mobiliário artesanal de alto padrão</span>
-            </div>
-            <div class="hero__art" id="heroArt"></div>
+            <img src="assets/img/hero.jpg" alt="Ateliê de marcenaria artesanal Marlon Brando" width="960" height="640" fetchpriority="high">
+          </div>
+          <div class="hero__badge" aria-hidden="true">
+            <span class="seal__mono">MB</span>
+            <span>Ateliê Marlon Brando<br>Mobiliário de alto padrão</span>
           </div>
         </div>
       </div>
@@ -146,6 +145,10 @@
           </blockquote>
         </div>
 
+        <div>
+        <figure class="story__photo reveal" style="margin:0 0 3rem">
+          <img src="assets/img/historia.jpg" alt="Mãos do artesão medindo uma peça torneada com paquímetro" loading="lazy" width="960" height="640">
+        </figure>
         <ol class="timeline">
           <li class="timeline__item reveal">
             <span class="timeline__year">1984</span>
@@ -168,6 +171,7 @@
             <p>Referência em mobiliário artesanal, com clientes em todo o Brasil.</p>
           </li>
         </ol>
+        </div>
       </div>
     </section>
 
@@ -203,7 +207,10 @@
     </section>
 
     <!-- ============ PROCESSO ============ -->
-    <section class="section section--dark" id="processo">
+    <section class="section section--dark process" id="processo">
+      <div class="process__bg" aria-hidden="true">
+        <img src="assets/img/processo.jpg" alt="" loading="lazy">
+      </div>
       <div class="container">
         <header class="section__head section__head--center">
           <p class="eyebrow">O método</p>
@@ -244,7 +251,7 @@
 
         <div class="projects">
           <article class="project project--wide reveal">
-            <div class="project__media" data-art="mesas" style="--tone:#7a5a40"></div>
+            <div class="project__media"><img src="assets/img/projetos/alto-do-lago.jpg" alt="Sala de jantar com mesa e cadeiras de madeira maciça" loading="lazy"></div>
             <div class="project__body">
               <span class="project__meta">Residencial · Fortaleza</span>
               <h3>Casa Alto do Lago</h3>
@@ -252,7 +259,7 @@
             </div>
           </article>
           <article class="project reveal">
-            <div class="project__media" data-art="poltronas" style="--tone:#5e4634"></div>
+            <div class="project__media"><img src="assets/img/projetos/conselho.jpg" alt="Poltrona de couro em ambiente de escritório" loading="lazy"></div>
             <div class="project__body">
               <span class="project__meta">Escritório de advocacia</span>
               <h3>Sala do Conselho</h3>
@@ -260,7 +267,7 @@
             </div>
           </article>
           <article class="project reveal">
-            <div class="project__media" data-art="bancos" style="--tone:#8b6a4c"></div>
+            <div class="project__media"><img src="assets/img/projetos/bistro.jpg" alt="Banquetas de couro e madeira no balcão de um bistrô" loading="lazy"></div>
             <div class="project__body">
               <span class="project__meta">Restaurante</span>
               <h3>Bistrô da Praça</h3>
@@ -268,7 +275,7 @@
             </div>
           </article>
           <article class="project project--wide reveal">
-            <div class="project__media" data-art="estantes" style="--tone:#6b4f3a"></div>
+            <div class="project__media"><img src="assets/img/projetos/biblioteca.jpg" alt="Estante de livros em madeira escura do piso ao teto" loading="lazy"></div>
             <div class="project__body">
               <span class="project__meta">Residencial · Eusébio</span>
               <h3>Biblioteca Particular</h3>
