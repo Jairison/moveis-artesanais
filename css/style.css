@@ -221,14 +221,13 @@ em { font-style: italic; color: var(--brass); }
 .timeline__item p { color: var(--muted); margin: 0; }
 
 /* ---------------- Foto de produto (retrato 4:5, peça centralizada) ---------------- */
-.photo { position: absolute; inset: 0; overflow: hidden; background: #8d8a86; }
+.photo { position: absolute; inset: 0; overflow: hidden; background: #1d1a17; }
 .photo::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
   box-shadow: inset 0 0 90px rgba(11, 10, 9, .5);
 }
 .photo img {
   width: 100%; height: 100%; object-fit: cover;
-  filter: brightness(.92) contrast(1.05) sepia(.1);
   transition: transform 1s var(--ease);
 }
 

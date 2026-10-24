@@ -23,36 +23,36 @@ robots.txt, sitemap.xml SEO
 3. **Imagem de compartilhamento**: hoje usa `assets/img/hero.jpg`. O ideal é uma foto do ateliê em 1200×630.
 4. **Textos**: revise história, linha do tempo, projetos e depoimentos em `index.html` (são exemplos).
 
-## Fotos provisórias
+## Imagens
 
-As fotos atuais são **provisórias**, todas em domínio público / CC0 (uso comercial livre):
-peças do acervo aberto do Cleveland Museum of Art e fotos de ateliê do StockSnap e do WordPress
-Photo Directory. A lista completa está em `assets/img/CREDITOS.txt`.
-**Elas não são peças do ateliê** — troque pelas fotos reais assim que possível.
+| Onde aparece | Arquivo | Tipo |
+|---|---|---|
+| Produtos (30) | `assets/img/produtos/mb-*.svg` | Ilustração em tricô náutico |
+| Projetos entregues | `assets/img/projetos/*.svg` | Ilustração de ambiente |
+| Grade do Instagram | `assets/img/insta/trama-*.svg` + produtos | Ilustração |
+| Topo, Nossa história, Processo | `assets/img/hero.jpg`, `historia.jpg`, `processo.jpg` | Foto CC0 provisória (`CREDITOS.txt`) |
 
-| Onde aparece | Arquivo |
-|---|---|
-| Topo do site | `assets/img/hero.jpg` |
-| Nossa história | `assets/img/historia.jpg` |
-| Fundo do "Processo" | `assets/img/processo.jpg` |
-| Projetos entregues | `assets/img/projetos/*.jpg` |
-| Grade do Instagram | `assets/img/insta/1.jpg` … `6.jpg` |
-| Produtos | `assets/img/produtos/mb-c01.jpg` … (nome = código do produto) |
+### Ilustrações em tricô náutico
 
-Para trocar, basta salvar a foto nova com o **mesmo nome de arquivo**.
+As ilustrações são geradas por `tools/gerar_ilustracoes.py` (Python 3, sem dependências).
+Para mudar a cor da corda ou da madeira de uma peça, edite a lista `PRODUTOS` no início do
+script e rode:
 
-## Fotos dos produtos
-
-Coloque a foto em `assets/img/produtos/` (ideal: **retrato 4:5**, ex. 880×1100, peça centralizada com
-folga nas bordas, fundo neutro, JPG até 200 KB)
-e informe o caminho no produto:
-
-```js
-{ codigo: "MB-C01", nome: "Cadeira Imperial", ..., imagem: "assets/img/produtos/cadeira-imperial.jpg" }
+```
+python tools/gerar_ilustracoes.py
 ```
 
-Sem foto, o site mostra automaticamente uma ilustração em traço da categoria.
+Cores de corda disponíveis: natural, caramelo, preto, grafite, offwhite, musgo, terracota,
+marinho, areia. Madeiras: freijo, nogueira, cumaru, carvalho, ebano, teca.
 
+### Trocando por fotos reais
+
+Coloque a foto em `assets/img/produtos/` (ideal: **retrato 4:5**, ex. 880×1100, peça centralizada
+com folga nas bordas, JPG até 200 KB) e troque o caminho no produto em `js/produtos.js`:
+
+```js
+{ codigo: "MB-C01", nome: "Cadeira Imperial", ..., imagem: "assets/img/produtos/mb-c01.jpg" }
+```
 
 
 ## Instagram

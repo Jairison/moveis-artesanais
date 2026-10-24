@@ -38,6 +38,9 @@
       "M50 140L50 112L58 112L58 140M60 140L60 108L68 108L68 140M70 140L70 116L78 116L78 140M130 140L130 118L150 118L150 140" +
       "M60 186L60 158L140 158L140 186",
   };
+  ART.sofas = ART.poltronas;
+  ART.espreguicadeiras = ART.bancos;
+
   function svgArt(cat, stroke) {
     return '<svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="' + (stroke || 1.4) +
       '" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + (ART[cat] || ART.cadeiras) + '"/></svg>';
@@ -69,6 +72,7 @@
   }
 
   /* ---------- WhatsApp e Instagram ---------- */
+  function temCorda(p) { return p.corda && p.corda !== "—"; }
   function whatsUrl(msg) {
     return "https://wa.me/" + CFG.whatsapp + "?text=" + encodeURIComponent(msg || CFG.mensagemPadrao);
   }
@@ -76,6 +80,7 @@
     return "Olá, Marlon Brando! Gostaria de um orçamento da peça:\n\n" +
       "• " + p.nome + " (cód. " + p.codigo + ")\n" +
       "• Madeira: " + p.madeira + "\n" +
+      (temCorda(p) ? "• Corda: " + p.corda + "\n" : "") +
       "• Medidas: " + p.medidas + "\n\nVi no site.";
   }
   var instaUrl = "https://www.instagram.com/" + CFG.instagramUsuario + "/";
@@ -160,7 +165,7 @@
       media(p) + '<span class="card__view">Ver detalhes</span></button>' +
       '<div class="card__body"><span class="card__code">' + p.codigo + " · " + esc(catNome(p.categoria)) + '</span>' +
       '<h3 class="card__title">' + esc(p.nome) + '</h3>' +
-      '<p class="card__meta">' + esc(p.madeira) + " · " + esc(p.medidas) + '</p>' +
+      '<p class="card__meta">' + esc(p.madeira) + (temCorda(p) ? " · " + esc(p.corda) : "") + '</p>' +
       '<a class="card__quote" href="' + whatsUrl(msgProduto(p)) + '" target="_blank" rel="noopener">' +
       '<svg class="icon" aria-hidden="true"><use href="#i-whats"/></svg>Solicitar orçamento</a></div></article>';
   }
@@ -184,7 +189,8 @@
     $("#modalCode").textContent = p.codigo + " · " + catNome(p.categoria);
     $("#modalTitle").textContent = p.nome;
     $("#modalDesc").textContent = p.descricao;
-    $("#modalSpecs").innerHTML = [["Madeira", p.madeira], ["Acabamento", p.acabamento], ["Medidas (L × P × A)", p.medidas]]
+    $("#modalSpecs").innerHTML = [["Madeira", p.madeira], ["Corda", temCorda(p) ? p.corda : ""], ["Acabamento", p.acabamento], ["Medidas (L × P × A)", p.medidas]]
+      .filter(function (s) { return s[1]; })
       .map(function (s) { return "<div><dt>" + s[0] + "</dt><dd>" + esc(s[1]) + "</dd></div>"; }).join("");
     $("#modalQuote").href = whatsUrl(msgProduto(p));
     modal.hidden = false;
@@ -226,10 +232,14 @@
     s.src = "https://www.instagram.com/embed.js";
     document.body.appendChild(s);
   } else {
-    // Galeria local: troque as fotos em assets/img/insta/1.jpg ... 6.jpg
-    instaEl.innerHTML = [1, 2, 3, 4, 5, 6].map(function (n) {
+    // Galeria local: troque os caminhos pelas fotos reais do perfil
+    var galeria = [
+      "assets/img/insta/trama-natural.svg", "assets/img/produtos/mb-c05.svg", "assets/img/produtos/mb-p02.svg",
+      "assets/img/insta/trama-caramelo.svg", "assets/img/produtos/mb-b04.svg", "assets/img/produtos/mb-s02.svg",
+    ];
+    instaEl.innerHTML = galeria.map(function (src) {
       return '<a class="insta__item reveal" href="' + instaUrl + '" target="_blank" rel="noopener" aria-label="Ver no Instagram">' +
-        '<img src="assets/img/insta/' + n + '.jpg" alt="Bastidores do ateliê Marlon Brando" loading="lazy"></a>';
+        '<img src="' + src + '" alt="Móveis em tricô náutico do ateliê Marlon Brando" loading="lazy"></a>';
     }).join("");
   }
 
@@ -269,7 +279,7 @@
         "@type": "ListItem", position: i + 1,
         item: {
           "@type": "Product", name: p.nome, sku: p.codigo, description: p.descricao,
-          category: catNome(p.categoria), material: p.madeira,
+          category: catNome(p.categoria), material: temCorda(p) ? p.madeira + ", " + p.corda : p.madeira,
           brand: { "@type": "Brand", name: "Marlon Brando" },
         },
       };
