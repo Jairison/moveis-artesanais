@@ -38,8 +38,8 @@
       "M50 140L50 112L58 112L58 140M60 140L60 108L68 108L68 140M70 140L70 116L78 116L78 140M130 140L130 118L150 118L150 140" +
       "M60 186L60 158L140 158L140 186",
   };
-  ART.sofas = ART.poltronas;
-  ART.espreguicadeiras = ART.bancos;
+  ART.estar = ART.poltronas;
+  ART.conjuntos = ART.mesas;
 
   function svgArt(cat, stroke) {
     return '<svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="' + (stroke || 1.4) +
@@ -52,7 +52,7 @@
   function media(p, eager) {
     if (!p.imagem) return placeholder(p.categoria);
     return '<div class="photo"><img src="' + p.imagem + '" alt="' +
-      esc(p.nome) + ' — ' + esc(p.madeira) + '"' + (eager ? "" : ' loading="lazy"') +
+      esc(p.nome) + ' — ' + esc(p.corda) + '"' + (eager ? "" : ' loading="lazy"') +
       ' decoding="async" data-cat="' + p.categoria + '"></div>';
   }
   // Se a foto falhar, volta para a ilustração
@@ -79,7 +79,7 @@
   function msgProduto(p) {
     return "Olá, Marlon Brando! Gostaria de um orçamento da peça:\n\n" +
       "• " + p.nome + " (cód. " + p.codigo + ")\n" +
-      "• Madeira: " + p.madeira + "\n" +
+      "• Estrutura: " + p.estrutura + "\n" +
       (temCorda(p) ? "• Corda: " + p.corda + "\n" : "") +
       "• Medidas: " + p.medidas + "\n\nVi no site.";
   }
@@ -165,7 +165,7 @@
       media(p) + '<span class="card__view">Ver detalhes</span></button>' +
       '<div class="card__body"><span class="card__code">' + p.codigo + " · " + esc(catNome(p.categoria)) + '</span>' +
       '<h3 class="card__title">' + esc(p.nome) + '</h3>' +
-      '<p class="card__meta">' + esc(p.madeira) + (temCorda(p) ? " · " + esc(p.corda) : "") + '</p>' +
+      '<p class="card__meta">' + esc(temCorda(p) ? p.corda : p.estrutura) + '</p>' +
       '<a class="card__quote" href="' + whatsUrl(msgProduto(p)) + '" target="_blank" rel="noopener">' +
       '<svg class="icon" aria-hidden="true"><use href="#i-whats"/></svg>Solicitar orçamento</a></div></article>';
   }
@@ -189,7 +189,7 @@
     $("#modalCode").textContent = p.codigo + " · " + catNome(p.categoria);
     $("#modalTitle").textContent = p.nome;
     $("#modalDesc").textContent = p.descricao;
-    $("#modalSpecs").innerHTML = [["Madeira", p.madeira], ["Corda", temCorda(p) ? p.corda : ""], ["Acabamento", p.acabamento], ["Medidas (L × P × A)", p.medidas]]
+    $("#modalSpecs").innerHTML = [["Estrutura", p.estrutura], ["Revestimento", temCorda(p) ? p.corda : ""], ["Acabamento", p.acabamento], ["Medidas", p.medidas]]
       .filter(function (s) { return s[1]; })
       .map(function (s) { return "<div><dt>" + s[0] + "</dt><dd>" + esc(s[1]) + "</dd></div>"; }).join("");
     $("#modalQuote").href = whatsUrl(msgProduto(p));
@@ -234,8 +234,8 @@
   } else {
     // Galeria local: troque os caminhos pelas fotos reais do perfil
     var galeria = [
-      "assets/img/insta/trama-natural.svg", "assets/img/produtos/mb-c05.svg", "assets/img/produtos/mb-p02.svg",
-      "assets/img/insta/trama-caramelo.svg", "assets/img/produtos/mb-b04.svg", "assets/img/produtos/mb-s02.svg",
+      "assets/img/insta/1.jpg", "assets/img/insta/2.jpg", "assets/img/insta/3.jpg",
+      "assets/img/insta/4.jpg", "assets/img/insta/5.jpg", "assets/img/insta/6.jpg",
     ];
     instaEl.innerHTML = galeria.map(function (src) {
       return '<a class="insta__item reveal" href="' + instaUrl + '" target="_blank" rel="noopener" aria-label="Ver no Instagram">' +
@@ -279,7 +279,7 @@
         "@type": "ListItem", position: i + 1,
         item: {
           "@type": "Product", name: p.nome, sku: p.codigo, description: p.descricao,
-          category: catNome(p.categoria), material: temCorda(p) ? p.madeira + ", " + p.corda : p.madeira,
+          category: catNome(p.categoria), material: temCorda(p) ? p.estrutura + ", " + p.corda : p.estrutura,
           brand: { "@type": "Brand", name: "Marlon Brando" },
         },
       };

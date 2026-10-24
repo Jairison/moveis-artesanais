@@ -1,8 +1,7 @@
-Fotos de ateliê em domínio público / CC0 (uso comercial livre, sem atribuição obrigatória),
-via Openverse (StockSnap). Substitua por fotos reais do ateliê quando possível.
+Fotos dos produtos, projetos, Instagram e topo do site: fotos do próprio ateliê Marlon Brando
+(assets/img/produtos/img-1..4.jpeg), recortadas para o site.
 
-As ilustrações de móveis (produtos/, projetos/, insta/) são originais, geradas por tools/gerar_ilustracoes.py.
+Fotos de ambiente (Nossa história e Processo): domínio público / CC0, via Openverse (StockSnap).
 
-hero.jpg | stocksnap | Carpenter Workshop | https://cdn.stocksnap.io/img-thumbs/960w/YPM6VH3FCW.jpg
 historia.jpg | stocksnap | Calipers Carpenter | https://cdn.stocksnap.io/img-thumbs/960w/GWIDWSKJJJ.jpg
 processo.jpg | stocksnap | Carpenter Working | https://cdn.stocksnap.io/img-thumbs/960w/ZMQNOXQMZO.jpg

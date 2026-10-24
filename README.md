@@ -25,34 +25,27 @@ robots.txt, sitemap.xml SEO
 
 ## Imagens
 
-| Onde aparece | Arquivo | Tipo |
+| Onde aparece | Arquivo | Origem |
 |---|---|---|
-| Produtos (30) | `assets/img/produtos/mb-*.svg` | Ilustração em tricô náutico |
-| Projetos entregues | `assets/img/projetos/*.svg` | Ilustração de ambiente |
-| Grade do Instagram | `assets/img/insta/trama-*.svg` + produtos | Ilustração |
-| Topo, Nossa história, Processo | `assets/img/hero.jpg`, `historia.jpg`, `processo.jpg` | Foto CC0 provisória (`CREDITOS.txt`) |
+| Produtos | `assets/img/produtos/*.jpg` | Fotos do ateliê (recortes de `img-1..4.jpeg`) |
+| Projetos | `assets/img/projetos/*.jpg` | Fotos do ateliê |
+| Grade do Instagram | `assets/img/insta/1.jpg` … `6.jpg` | Fotos do ateliê |
+| Topo do site | `assets/img/hero.jpg` | Foto do ateliê |
+| Nossa história, Processo | `historia.jpg`, `processo.jpg` | Foto CC0 de ambiente (`CREDITOS.txt`) |
 
-### Ilustrações em tricô náutico
-
-As ilustrações são geradas por `tools/gerar_ilustracoes.py` (Python 3, sem dependências).
-Para mudar a cor da corda ou da madeira de uma peça, edite a lista `PRODUTOS` no início do
-script e rode:
-
-```
-python tools/gerar_ilustracoes.py
-```
-
-Cores de corda disponíveis: natural, caramelo, preto, grafite, offwhite, musgo, terracota,
-marinho, areia. Madeiras: freijo, nogueira, cumaru, carvalho, ebano, teca.
-
-### Trocando por fotos reais
+### Adicionando um produto
 
 Coloque a foto em `assets/img/produtos/` (ideal: **retrato 4:5**, ex. 880×1100, peça centralizada
-com folga nas bordas, JPG até 200 KB) e troque o caminho no produto em `js/produtos.js`:
+com folga nas bordas, JPG até 200 KB) e adicione o produto em `js/produtos.js`:
 
 ```js
-{ codigo: "MB-C01", nome: "Cadeira Imperial", ..., imagem: "assets/img/produtos/mb-c01.jpg" }
+{ codigo: "MB-06", nome: "Nome da peça", categoria: "estar", estrutura: "Alumínio",
+  corda: "Tricô náutico ...", acabamento: "...", medidas: "Sob medida",
+  descricao: "...", destaque: false, imagem: "assets/img/produtos/nome-da-peca.jpg" }
 ```
+
+Fotos tiradas de posts do Instagram devem ser recortadas para mostrar só a peça,
+sem o logo e o texto do post.
 
 
 ## Instagram
@@ -66,5 +59,5 @@ com folga nas bordas, JPG até 200 KB) e troque o caminho no produto em `js/prod
 ## Orçamento por produto
 
 Cada produto tem botão **Solicitar orçamento** que abre o WhatsApp com a mensagem pronta
-(nome, código, madeira e medidas). Também é possível compartilhar um produto direto:
-`seusite.com.br/#p-MB-C01`.
+(nome, código, estrutura, revestimento e medidas). Também é possível compartilhar um produto direto:
+`seusite.com.br/#p-MB-01`.
